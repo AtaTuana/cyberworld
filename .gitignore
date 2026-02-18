@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+venv/
+.env/
+
+# Runtime data (sim output)
+data/logs/
+data/disks/
+data/worlds/
+
+# OS
+.DS_Store
+Thumbs.db

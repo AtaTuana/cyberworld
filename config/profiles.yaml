@@ -1,0 +1,13 @@
+network_types:
+  home:       { weight: 0.40 }
+  smb:        { weight: 0.25 }
+  enterprise: { weight: 0.12 }
+  campus:     { weight: 0.08 }
+  cloud:      { weight: 0.08 }
+  iot:        { weight: 0.07 }
+
+service_ports:
+  DNS:  { proto: "UDP", port: 53 }
+  HTTP: { proto: "TCP", port: 443 }
+  AUTH: { proto: "TCP", port: 3389 }
+  FILE: { proto: "TCP", port: 445 }

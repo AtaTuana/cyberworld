@@ -1,0 +1,22 @@
+seed: 42
+sim:
+  duration_sec: 60
+  max_events: 1000000
+
+world:
+  networks_target: 20
+  hosts_target: 200
+  core_routers: 30
+
+traffic:
+  home:       { dns: 0.10, http: 0.05, auth: 0.002,  file: 0.001 }
+  smb:        { dns: 0.20, http: 0.08, auth: 0.010,  file: 0.006 }
+  enterprise: { dns: 0.35, http: 0.10, auth: 0.030,  file: 0.012 }
+  campus:     { dns: 0.30, http: 0.12, auth: 0.015,  file: 0.004 }
+  cloud:      { dns: 0.05, http: 0.20, auth: 0.006,  file: 0.010 }
+  iot:        { dns: 0.25, http: 0.01, auth: 0.0005, file: 0.0002 }
+
+files:
+  small_min_mb: 5
+  small_max_mb: 10
+  big_virtual_max_gb: 20
