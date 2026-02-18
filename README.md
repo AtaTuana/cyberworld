@@ -1,3 +1,11 @@
+## Features
+- 20 randomized networks
+- ~200 hosts
+- Virtual disk metadata (no large allocations)
+- Simulated routing + bandwidth + packet loss
+- JSONL telemetry
+- Basic SIEM detectors
+
 # cyberworld
 
 Game-like cyber world simulator (NOT real VMs/OS):
