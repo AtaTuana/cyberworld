@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
-from typing import Optional, Any, Dict
+from dataclasses import dataclass, field, asdict
+from typing import Any, Dict, Optional
 
 
 @dataclass
@@ -16,18 +16,26 @@ class LogEvent:
     src_port: int
     dst_port: int
 
-    result: str
-    reason: Optional[str] = None
-
+    result: str = "info"
+    reason: str = "-"
     bytes: int = 0
-    msg: Optional[str] = None
+    msg: str = "-"
+    session_id: str = "-"
 
-    session_id: Optional[str] = None
-    world_id: Optional[str] = None
-    network_id: Optional[str] = None
-    host_id: Optional[str] = None
+    world_id: str = "-"
+    network_id: str = "-"
+    host_id: str = "-"
 
-    extra: Optional[Dict[str, Any]] = None
+    # ✅ identity meta
+    actor: str = "-"
+    hostname: str = "-"
+    username: str = "-"
+    identity_type: str = "-"
 
-    def to_dict(self) -> dict:
-        return asdict(self)
+    extra: Optional[Dict[str, Any]] = field(default=None)
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = asdict(self)
+        if d.get("extra") is None:
+            d.pop("extra", None)
+        return d
